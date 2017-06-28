@@ -57,7 +57,6 @@ vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
-vendor/lib64/libaudiodevarb.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
@@ -230,7 +229,6 @@ vendor/lib/libllvm-qcom.so
 vendor/lib/libllvm-qgl.so
 vendor/lib/libmm-disp-apis.so
 vendor/lib/libmm-qdcm.so
-vendor/lib/libmmQSM.so
 vendor/lib/libOpenCL.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
@@ -267,7 +265,6 @@ vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
 -vendor/lib64/libsdm-disp-apis.so
 vendor/lib64/libsdmextension.so
-#vendor/lib64/libuiblur.so|4b3fabf5ded7c4af531abde681676fc5e9248494
 
 # Keystore
 vendor/lib/hw/keystore.msm8998.so
@@ -304,8 +301,6 @@ vendor/lib/libvqzip.so
 -priv-app/QtiTetherService/QtiTetherService.apk
 vendor/lib64/libconnctrl.so
 vendor/lib64/libQtiTether.so
-vendor/lib/libQtiTether.so
-vendor/lib/libconnctrl.so
 
 # Perf
 bin/energy-awareness
@@ -364,7 +359,6 @@ vendor/lib64/libsmemlog.so
 # Radio
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
--app/fastdormancy/fastdormancy.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 -app/shutdownlistener/shutdownlistener.apk
 bin/ipacm-diag
@@ -381,7 +375,7 @@ etc/permissions/telephonyservice.xml
 framework/embmslibrary.jar
 -framework/qcnvitems.jar
 -framework/qcrilhook.jar
-framework/qti-telephony-common.jar|3cea332c3cc179fae5691763c8e55027cc76ffc8
+framework/qti-telephony-common.jar
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
@@ -438,8 +432,6 @@ vendor/lib64/libvoice-svc.so
 
 # Sensors
 bin/sensors.qcom
-etc/sensors/hals.conf
-etc/sensors/sensor_def_qcomdev.conf
 vendor/lib/hw/activity_recognition.msm8998.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so

@@ -221,8 +221,6 @@ etc/firmware/cpp_firmware_v1_5_0.fw
 etc/firmware/cpp_firmware_v1_5_2.fw
 etc/firmware/cpp_firmware_v1_6_0.fw
 etc/firmware/cpp_firmware_v1_8_0.fw
-etc/firmware/cpp_firmware_v1_10_0.fw
-etc/firmware/cpp_firmware_v1_12_0.fw
 
 # Camera sensors
 vendor/lib/libmmcamera_isp_abf48.so
@@ -277,6 +275,9 @@ vendor/lib/libmmcamera_isp_color_xform_viewfinder46.so
 lib64/hw/fingerprint.msm8998.so
 lib64/lib_fpc_tac_shared.so
 
+# Graphics firmware
+ 
+
 # NFC firmware
 vendor/firmware/libpn553_fw.so
 
@@ -284,7 +285,7 @@ vendor/firmware/libpn553_fw.so
 lib64/libparam.so
 
 # Radio - MBN
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mbn_ota.txt
+etc/firmware/mbn_ota/mbn_ota.txt
 
 # Sensors
 etc/sensors/hals.conf
@@ -292,11 +293,25 @@ etc/sensors/sensor_def_qcomdev.conf
 
 # Signed 
 # graphics firmware
-etc/firmware/a540_gpmu.fw2
-etc/firmware/a540_zap.b00
-etc/firmware/a540_zap.b01
-etc/firmware/a540_zap.b02
-etc/firmware/a540_zap.elf
+# ship all for now
+etc/firmware/a530_gpmu.fw2                       
+etc/firmware/a530_pfp.fw                         
+etc/firmware/a530_pm4.fw                         
+etc/firmware/a530v1_pfp.fw                       
+etc/firmware/a530v1_pm4.fw                       
+etc/firmware/a530v2_seq.fw2                      
+etc/firmware/a530v3_gpmu.fw2                     
+etc/firmware/a530v3_seq.fw2                      
+etc/firmware/a530_zap.b00                        
+etc/firmware/a530_zap.b01                        
+etc/firmware/a530_zap.b02                        
+etc/firmware/a530_zap.elf                        
+etc/firmware/a530_zap.mdt                        
+etc/firmware/a540_gpmu.fw2                       
+etc/firmware/a540_zap.b00                        
+etc/firmware/a540_zap.b01                        
+etc/firmware/a540_zap.b02                        
+etc/firmware/a540_zap.elf                        
 etc/firmware/a540_zap.mdt
 
 # TP firmware
