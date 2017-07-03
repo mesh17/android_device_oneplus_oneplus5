@@ -12,26 +12,34 @@ vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 
 # ADSP modules
+vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
+vendor/lib/rfsa/adsp/libAudienceAZA.so
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_800h_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_skel.so
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
 vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
 vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
-vendor/lib/rfsa/adsp/libadsp_hvx_stats.so
-vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_BGGR.so
-vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_RGGB.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdirac_capiv2.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libedge_smooth_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so
+vendor/lib/rfsa/adsp/libqvr_adsp_driver_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveCleverCapture_skel.so
+vendor/lib/rfsa/adsp/libscveFaceLandmark_skel.so
 vendor/lib/rfsa/adsp/libscveFaceRecognition_skel.so
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libscveTextReco_skel.so
+vendor/lib/rfsa/adsp/libscveVideoSummary_skel.so
 vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
-vendor/lib/rfsa/adsp/us-syncproximity.so
 
 # Audio
 vendor/lib/libacdb-fts.so
@@ -68,8 +76,8 @@ etc/firmware/rampatch_tlv_2.1.tlv
 etc/firmware/rampatch_tlv_3.0.tlv
 etc/firmware/rampatch_tlv_3.2.tlv
 etc/firmware/rampatch_tlv.img
-vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so
-vendor/lib/libaptXHD-1.0.0-rel-Android21-ARMv7A.so
+#vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so
+#vendor/lib/libaptXHD-1.0.0-rel-Android21-ARMv7A.so
 vendor/lib/libaptXScheduler.so
 vendor/lib/libbtnv.so
 vendor/lib64/libbtnv.so
@@ -82,11 +90,6 @@ etc/cne/wqeclient/ATT/ATT_profile1.xml
 etc/cne/wqeclient/ATT/ATT_profile2.xml
 etc/cne/wqeclient/ATT/ATT_profile3.xml
 etc/cne/wqeclient/ATT/ATT_profile4.xml
-etc/cne/wqeclient/profile1.xml
-etc/cne/wqeclient/profile2.xml
-etc/cne/wqeclient/profile3.xml
-etc/cne/wqeclient/profile4.xml
-etc/cne/wqeclient/profile5.xml
 etc/cne/wqeclient/ROW/ROW_profile1.xml
 etc/cne/wqeclient/ROW/ROW_profile2.xml
 etc/cne/wqeclient/ROW/ROW_profile3.xml
@@ -160,8 +163,8 @@ vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 
 # Gatekeeper
-vendor/lib/hw/gatekeeper.msm8996.so
-vendor/lib64/hw/gatekeeper.msm8996.so
+vendor/lib/hw/gatekeeper.msm8998.so
+vendor/lib64/hw/gatekeeper.msm8998.so
 
 # GPS
 bin/loc_launcher
@@ -214,7 +217,7 @@ vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libQTapGLES.so
-vendor/lib/hw/vulkan.msm8996.so
+vendor/lib/hw/vulkan.msm8998.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
@@ -240,7 +243,7 @@ vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libQTapGLES.so
-vendor/lib64/hw/vulkan.msm8996.so
+vendor/lib64/hw/vulkan.msm8998.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
 vendor/lib64/libC2D2.so
@@ -264,26 +267,36 @@ vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
 -vendor/lib64/libsdm-disp-apis.so
 vendor/lib64/libsdmextension.so
-vendor/lib64/libuiblur.so|4b3fabf5ded7c4af531abde681676fc5e9248494
+#vendor/lib64/libuiblur.so|4b3fabf5ded7c4af531abde681676fc5e9248494
 
 # Keystore
-vendor/lib/hw/keystore.msm8996.so
-vendor/lib64/hw/keystore.msm8996.so
+vendor/lib/hw/keystore.msm8998.so
+vendor/lib64/hw/keystore.msm8998.so
 
 # Listen
-vendor/lib/hw/sound_trigger.primary.msm8996.so
-vendor/lib/libadpcmdec.so
+vendor/lib/hw/sound_trigger.primary.msm8998.so
 vendor/lib/libsmwrapper.so
 
 # Media
+-vendor/lib/libgpustats.so
+-vendor/lib64/libgpustats.so
+lib64/libOmxVpp.so
+lib64/libvpplibrary.so
 lib/libOmxVpp.so
 lib/libvpplibrary.so
+vendor/lib64/libI420colorconvert.so
+vendor/lib64/libOmxAacDec.so
+vendor/lib64/libOmxEvrcDec.so
+vendor/lib64/libOmxQcelp13Dec.so
+vendor/lib64/libmm-color-convertor.so
+vendor/lib64/libmmosal.so
+vendor/lib64/libvpphvx.so
 vendor/lib/libI420colorconvert.so
-vendor/lib/libmm-color-convertor.so
-vendor/lib/libmmosal.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libmm-color-convertor.so
+vendor/lib/libmmosal.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvqzip.so
 
@@ -291,6 +304,8 @@ vendor/lib/libvqzip.so
 -priv-app/QtiTetherService/QtiTetherService.apk
 vendor/lib64/libconnctrl.so
 vendor/lib64/libQtiTether.so
+vendor/lib/libQtiTether.so
+vendor/lib/libconnctrl.so
 
 # Perf
 bin/energy-awareness
@@ -423,19 +438,25 @@ vendor/lib64/libvoice-svc.so
 
 # Sensors
 bin/sensors.qcom
-vendor/lib/hw/activity_recognition.msm8996.so
+etc/sensors/hals.conf
+etc/sensors/sensor_def_qcomdev.conf
+vendor/lib/hw/activity_recognition.msm8998.so
+vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
+vendor/lib/libsensor_test.so
 vendor/lib/libsensor_thresh.so
 vendor/lib/libsensor_user_cal.so
 vendor/lib/libsensor1.so
-vendor/lib/sensors.oem.so
+vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.ssc.so
-vendor/lib64/hw/activity_recognition.msm8996.so
+vendor/lib64/hw/activity_recognition.msm8998.so
+vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
+vendor/lib64/libsensor_test.so
 vendor/lib64/libsensor_thresh.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/libsensor1.so
-vendor/lib64/sensors.oem.so
+vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.ssc.so
 
 # Thermal
