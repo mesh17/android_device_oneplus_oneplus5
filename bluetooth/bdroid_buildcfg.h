@@ -1,11 +1,6 @@
 /*
- *
- *  Copyright (c) 2013, The Linux Foundation. All rights reserved.
- *  Not a Contribution, Apache license notifications and license are retained
- *  for attribution purposes only.
- *
  * Copyright (C) 2012 The Android Open Source Project
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,32 +18,9 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#include <cutils/properties.h>
-
-static inline const char* BtmGetDefaultName()
-{
-    int32_t rf_version = property_get_int32("ro.boot.rf_version", 0);
-
-    switch (rf_version) {
-    case 11:
-    case 21:
-    case 31:
-        return "OnePlus 3";
-    case 12:
-    case 22:
-    case 32:
-        return "OnePlus 3T";
-    }
-
-    return "";
-}
-
-#define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
-#define BLUETOOTH_QTI_SW TRUE
-// Disables read remote device feature
-#define MAX_ACL_CONNECTIONS   16
-#define MAX_L2CAP_CHANNELS    16
-#define BLE_VND_INCLUDED   TRUE
-// skips conn update at conn completion
-#define BT_CLEAN_TURN_ON_DISABLED 1
+#define BTM_DEF_LOCAL_NAME   "Xiaomi MI 6"
+#define BTA_DISABLE_DELAY 1000 /* in milliseconds */
+#define BLUETOOTH_QCOM_SW TRUE
+#define BLUETOOTH_QCOM_LE_INTL_SCAN TRUE
+#define BTC_INCLUDED TRUE
 #endif
