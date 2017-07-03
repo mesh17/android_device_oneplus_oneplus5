@@ -21,7 +21,7 @@
 # definition file).
 #
 
-$(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
+$(call inherit-product, vendor/oneplus/oneplus5/oneplus5-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
