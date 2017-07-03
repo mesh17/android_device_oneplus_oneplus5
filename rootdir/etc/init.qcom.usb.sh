@@ -37,6 +37,12 @@ else
     soc_hwplatform=`cat /sys/devices/system/soc/soc0/hw_platform` 2> /dev/null
 fi
 
+if [ -f /sys/devices/soc0/machine ]; then
+    soc_machine=`cat /sys/devices/soc0/machine` 2> /dev/null
+else
+    soc_machine=`cat /sys/devices/system/soc/soc0/machine` 2> /dev/null
+fi
+
 # Get hardware revision
 if [ -f /sys/devices/soc0/revision ]; then
     soc_revision=`cat /sys/devices/soc0/revision` 2> /dev/null
@@ -100,6 +106,16 @@ else
 	soc_id=`cat /sys/devices/system/soc/soc0/id`
 fi
 
+#ifdef VENDOR_EDIT
+boot_mode=`getprop ro.boot.ftm_mode`
+echo "boot_mode: $boot_mode" > /dev/kmsg
+case "$boot_mode" in
+    "ftm_at" | "ftm_rf" | "ftm_wlan" | "ftm_mos")
+    setprop sys.usb.config diag,adb
+    echo "AFTER boot_mode: diag,adb" > /dev/kmsg
+esac
+#endif
+
 #
 # Allow USB enumeration with default PID/VID
 #
@@ -124,7 +140,13 @@ case "$usb_config" in
 	              setprop persist.sys.usb.config diag,adb
 	          ;;
                   *)
-	          case "$target" in
+		  soc_machine=${soc_machine:0:3}
+		  case "$soc_machine" in
+		    "SDA")
+	              setprop persist.sys.usb.config diag,adb
+		    ;;
+		    *)
+	            case "$target" in
                       "msm8916")
 		          setprop persist.sys.usb.config diag,serial_smd,rmnet_bam,adb
 		      ;;
@@ -150,13 +172,15 @@ case "$usb_config" in
 	              "msm8952" | "msm8953")
 		          setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
 		      ;;
-	              "msm8998")
-		          setprop persist.sys.usb.config diag,serial_cdev,rmnet_gsi,adb
+	              "msm8998" | "sdm660")
+		         # setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb
 		      ;;
 	              *)
 		          setprop persist.sys.usb.config diag,adb
 		      ;;
-                  esac
+                    esac
+		    ;;
+		  esac
 	          ;;
 	      esac
 	      ;;
@@ -172,14 +196,22 @@ case "$target" in
     "msm8996")
         setprop sys.usb.controller "6a00000.dwc3"
         setprop sys.usb.rndis.func.name "rndis_bam"
+	setprop sys.usb.rmnet.func.name "rmnet_bam"
 	;;
     "msm8998")
         setprop sys.usb.controller "a800000.dwc3"
         setprop sys.usb.rndis.func.name "gsi"
+	setprop sys.usb.rmnet.func.name "gsi"
 	;;
-    "msmfalcon")
+    "sdm660")
         setprop sys.usb.controller "a800000.dwc3"
         setprop sys.usb.rndis.func.name "rndis_bam"
+	setprop sys.usb.rmnet.func.name "rmnet_bam"
+        ;;
+    "msmskunk")
+        setprop sys.usb.controller "a600000.dwc3"
+        setprop sys.usb.rndis.func.name "gsi"
+        setprop sys.usb.rmnet.func.name "gsi"
         ;;
     *)
 	;;
@@ -187,6 +219,25 @@ esac
 
 # check configfs is mounted or not
 if [ -d /config/usb_gadget ]; then
+	# Chip-serial is used for unique MSM identification in Product string
+	msm_serial=`cat /sys/devices/soc0/serial_number`;
+	msm_serial_hex=`printf %08X $msm_serial`
+	machine_type=`cat /sys/devices/soc0/machine`
+#ifdef VENDOR_EDIT
+#david.liu@bsp, 20170505 Fix product name for Android Auto
+	product_string=`getprop ro.product.brand`
+#else
+#	product_string="$machine_type-$soc_hwplatform _SN:$msm_serial_hex"
+#endif
+	echo "$product_string" > /config/usb_gadget/g1/strings/0x409/product
+
+	# ADB requires valid iSerialNumber; if ro.serialno is missing, use dummy
+	serialno=`getprop ro.serialno`
+	if [ "$serialno" == "" ]; then
+	    serialno=1234567
+	fi
+	echo $serialno > /config/usb_gadget/g1/strings/0x409/serialnumber
+
 	setprop sys.usb.configfs 1
 fi
 

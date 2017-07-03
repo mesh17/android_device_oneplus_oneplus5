@@ -114,7 +114,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
-    audio.primary.msm8996 \
+    audio.primary.msm8998 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
@@ -167,10 +167,10 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8996 \
-    gralloc.msm8996 \
-    hwcomposer.msm8996 \
-    memtrack.msm8996 \
+    copybit.msm8998 \
+    gralloc.msm8998 \
+    hwcomposer.msm8998 \
+    memtrack.msm8998 \
     liboverlay \
     libtinyxml
 
@@ -195,7 +195,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8996 \
+    gps.msm8998 \
     libcurl \
     libgnsspps
 
@@ -227,7 +227,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8996
+    lights.msm8998
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \
@@ -273,7 +273,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.msm8996
+    power.msm8998
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -282,10 +282,14 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.class_main.sh \
+    init.oem.early_boot.sh \
     init.qcom.bt.sh \
-    init.qcom.power.rc \
+    init.qcom.class_core.sh \
+    init.qcom.post_boot.sh \
     init.qcom.rc \
     init.qcom.sh \
+    init.qcom.sensors.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
     init.target.rc \
@@ -299,7 +303,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.msm8996
+    sensors.msm8998
 
 # Wifi
 PRODUCT_PACKAGES += \
