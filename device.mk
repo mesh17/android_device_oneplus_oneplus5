@@ -71,9 +71,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Device was launched with M
+# Device was launched with N
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.first_api_level=23
+    ro.product.first_api_level=25
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
@@ -102,13 +102,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
-
-# Alipay
-PRODUCT_PACKAGES += \
-    org.ifaa.android.manager
-
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -175,8 +168,8 @@ PRODUCT_PACKAGES += \
 # Display calibration
 PRODUCT_PACKAGES += \
     FOSSConfig.xml \
-    qdcm_calib_data_samsung_s6e3fa3_1080p_cmd_mode_dsi_panel.xml \
-    qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml
+    qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml \
+    qdcm_calib_data_samsung_s6e3fa6_1080p_cmd_mode_dsi_panel.xml
 
 # Doze mode
 PRODUCT_PACKAGES += \
@@ -184,8 +177,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    fingerprintd \
-    OneplusPocketMode
+    fingerprintd 
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
