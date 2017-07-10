@@ -19,10 +19,10 @@
 set -e
 
 # Required!
-DEVICE=oneplus5
+DEVICE=cheeseburger
 VENDOR=oneplus
 
-INITIAL_COPYRIGHT_YEAR=2016
+INITIAL_COPYRIGHT_YEAR=2017
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

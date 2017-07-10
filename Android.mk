@@ -25,7 +25,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),oneplus5)
+ifeq ($(TARGET_DEVICE),cheeseburger)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)

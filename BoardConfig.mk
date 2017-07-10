@@ -24,7 +24,7 @@
 # Inherit from oppo-common
 -include device/oppo/common/BoardConfigCommon.mk
 
-PLATFORM_PATH := device/oneplus/oneplus5
+PLATFORM_PATH := device/oneplus/cheeseburger
 
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
@@ -32,7 +32,7 @@ BOARD_VENDOR := oneplus
 
 # Assertions
 TARGET_BOARD_INFO_FILE ?= $(PLATFORM_PATH)/board-info.txt
-TARGET_OTA_ASSERT_DEVICE := oneplus5,oneplus5,op5
+TARGET_OTA_ASSERT_DEVICE := A5000,oneplus5,cheeseburger,op5
 
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
@@ -73,7 +73,7 @@ TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8998
-TARGET_KERNEL_CONFIG := oneplus5_defconfig
+TARGET_KERNEL_CONFIG := cheeseburger_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # QCOM hardware
@@ -166,8 +166,8 @@ TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 
 # Init
-#TARGET_INIT_VENDOR_LIB := libinit_oneplus5
-#TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus5
+#TARGET_INIT_VENDOR_LIB := libinit_cheeseburger
+#TARGET_RECOVERY_DEVICE_MODULES := libinit_cheeseburger
 #TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # Keystore
@@ -228,4 +228,4 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
--include vendor/oneplus/oneplus5/BoardConfigVendor.mk
+-include vendor/oneplus/cheeseburger/BoardConfigVendor.mk
